@@ -12,7 +12,7 @@ import styles from '../../css/common.module.css'
 
 function Category(category: CategoryDefine): ReactNode {
     return <>
-        <h1>{category.categoryName}</h1>
+        <h1 id={category.categoryName}>{category.categoryName}</h1>
         {
             category.subCategories.map(subCategory => <>
                 {SubCategory(subCategory)}
@@ -49,7 +49,7 @@ function Word(word: WordDefine): ReactNode {
 
 export function Glossary({glossaryDefine} : {glossaryDefine: GlossaryDefine}): ReactNode{
     const tabs = glossaryDefine.categories.map((category) => <>
-        <li className="tabs__item shadow--lw">{category.categoryName}</li>
+        <a className="tabs__item shadow--lw" href={"#" + category.categoryName}><li>{category.categoryName}</li></a>
     </>)
     const result = glossaryDefine.categories.map((category) => <>
         {Category(category)}
