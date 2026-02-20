@@ -33,18 +33,33 @@ function SubCategory(subCategory: SubCategoryDefine): ReactNode {
 
 function Word(word: WordDefine): ReactNode {
     return <>
-        <h3>{word.name}</h3>
-        <p>{word.description}</p>
+        <div className="card margin--lg">
+            <div className="card__header">
+                <div className="avatar">
+                    <img
+                        className="avatar__photo"
+                        src="https://avatars1.githubusercontent.com/u/4060187?s=460&v=4" />
+                    <div className="avatar__name">{word.name}</div>
+                </div>
+            </div>
+            <div className="card__body">{word.description}</div>
+        </div>
     </>
 }
 
 export function Glossary({glossaryDefine} : {glossaryDefine: GlossaryDefine}): ReactNode{
+    const tabs = glossaryDefine.categories.map((category) => <>
+        <li className="tabs__item shadow--lw">{category.categoryName}</li>
+    </>)
     const result = glossaryDefine.categories.map((category) => <>
         {Category(category)}
     </>)
 
     return(<>
         <div className="container">
+            <ul className="tabs tabs--block shadow--md">
+                {tabs}
+            </ul>
             {result}
         </div>
     </>)
