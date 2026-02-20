@@ -21,7 +21,7 @@ const FeatureList: FeatureItem[] = [
     Png: worldmap_mapleworld,
     description: (
       <>
-        メイプルストーリーの地域やイベントマップについての説明です。
+        メイプルストーリーの地域やイベントのストーリーについての説明です。
       </>
     ),
     url: "/region"
@@ -31,7 +31,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        魅力的なNPCや敵キャラクターの説明です。
+        NPCや敵キャラクターの説明です。
       </>
     ),
     url: "/npc"
@@ -42,7 +42,7 @@ const FeatureList: FeatureItem[] = [
     Png: jobs,
     description: (
       <>
-        プレイアブルキャラクター達の説明です。
+        プレイアブルキャラクターの職業ストーリーの説明です。
       </>
     ),
     url: "/jobs"
